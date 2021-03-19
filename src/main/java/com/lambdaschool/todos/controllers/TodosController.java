@@ -21,14 +21,6 @@ public class TodosController {
     @Autowired
     TodosService todosService;
 
-//    // http://localhost:2019/todos/todos
-//    @GetMapping(value = "todos",
-//    produces = "application/json")
-//    public ResponseEntity<?> findAll() {
-//        List<Todos> myTodos = todosService.findAll();
-//        return new ResponseEntity<>(myTodos, HttpStatus.OK);
-//    }
-
     /**
      * Given the todo id, mark the task as complete
      * <br>Example: <a href="http://localhost:2019/todos/todo/7">http://localhost:2019/todos/todo/7</a>
@@ -44,5 +36,4 @@ public class TodosController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-// DELETE /users/user/{userid} - Deletes a user based off of their userid and deletes all their associated todos.
 }
