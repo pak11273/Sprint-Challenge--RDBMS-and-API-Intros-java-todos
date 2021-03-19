@@ -45,8 +45,8 @@ public class User extends Auditable {
     @Email
     private String primaryemail;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    @JsonIgnoreProperties(value = "user", allowSetters = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties(value = "user")
     private List<Todos> todos = new ArrayList<>();
 
     /**
@@ -71,6 +71,13 @@ public class User extends Auditable {
         setUsername(username);
         setPassword(password);
         this.primaryemail = primaryemail;
+    }
+
+    public User(String username, String password, @Email String primaryemail, List<Todos> todos) {
+        this.username = username;
+        this.password = password;
+        this.primaryemail = primaryemail;
+        this.todos = todos;
     }
 
     /**

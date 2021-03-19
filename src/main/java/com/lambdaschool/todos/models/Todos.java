@@ -17,9 +17,9 @@ public class Todos extends Auditable
 
     private boolean completed = false;
 
-    @ManyToOne( cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn( name = "userid", nullable = false)
-    @JsonIgnoreProperties(value = "todo", allowSetters = true)
+    @JsonIgnoreProperties(value = "todos", allowSetters = true)
     private User user;
 
     public Todos() {
@@ -61,7 +61,5 @@ public class Todos extends Auditable
     public void setUser(User user) {
         this.user = user;
     }
-
-
 }
 
