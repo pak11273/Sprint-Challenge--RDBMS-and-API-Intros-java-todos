@@ -35,4 +35,6 @@ public class TodosController {
         todosService.markComplete(todoid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+// DELETE /users/user/{userid} - Deletes a user based off of their userid and deletes all their associated todos.
 }

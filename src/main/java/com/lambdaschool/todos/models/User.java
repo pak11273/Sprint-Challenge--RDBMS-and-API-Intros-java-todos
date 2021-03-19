@@ -162,4 +162,5 @@ public class User extends Auditable {
     public void setTodos(List<Todos> todos) {
         this.todos = todos;
     }
+
 }
